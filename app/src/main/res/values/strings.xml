@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CalculadoraKotlin</string>
+    <string name="button_name">Calcular</string>
+</resources>
