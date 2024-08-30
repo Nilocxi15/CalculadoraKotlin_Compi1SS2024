@@ -8,6 +8,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.calculadorakotlin.analyzers.L_Analyzer
+import com.example.calculadorakotlin.analyzers.S_Analyzer
+import java.io.StringReader
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +38,20 @@ class MainActivity : AppCompatActivity() {
     private fun getText(){
         val contentString = textContent?.text.toString()
 
-        Toast.makeText(this, "El texto es: $contentString", Toast.LENGTH_LONG).show()
+        val reader = StringReader(contentString)
+        try {
+            val lexic: L_Analyzer = L_Analyzer(reader)
+            val parser: S_Analyzer = S_Analyzer(lexic)
+            parser.parse()
+
+            if (parser.resultado == null) {
+                Toast.makeText(this, "Expresión incorrecta. VERIFICAR", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "El resultado es: ${parser.resultado}", Toast.LENGTH_LONG).show()
+            }
+
+        } catch (e: Exception) {
+            Toast.makeText(this, "Exprexión incorrecta. VERIFICAR", Toast.LENGTH_LONG).show()
+        }
     }
 }

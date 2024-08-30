@@ -42,4 +42,4 @@ WhiteSpace     = {LineTerminator} | [ \t\f]
 {WhiteSpace} {/* Ignore */}
 
 //------> Errores Lexicos
-.                       { System.out.println("Error Lexico"+yytext()+" Linea "+ (yyline + 1) +" Columna "+ (yycolumn + 1));}
+.                       { System.out.println("Error Lexico"+yytext()+" Linea "+ (yyline + 1) +" Columna "+ (yycolumn + 1)); }
