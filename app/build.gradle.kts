@@ -41,7 +41,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    //Dependencia de cup
     implementation(libs.androidx.constraintlayout)
+    implementation("com.github.vbmacher:java-cup-runtime:11b")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
