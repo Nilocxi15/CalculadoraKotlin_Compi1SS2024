@@ -1,5 +1,6 @@
 package com.example.calculadorakotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -10,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.calculadorakotlin.analyzers.L_Analyzer
 import com.example.calculadorakotlin.analyzers.S_Analyzer
+import com.example.calculadorakotlin.gui.resultActivity
 import java.io.StringReader
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +49,9 @@ class MainActivity : AppCompatActivity() {
             if (parser.resultado == null) {
                 Toast.makeText(this, "Expresión incorrecta. VERIFICAR", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this, "El resultado es: ${parser.resultado}", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, resultActivity::class.java)
+                intent.putExtra("total", parser.resultado)
+                startActivity(intent)
             }
 
         } catch (e: Exception) {

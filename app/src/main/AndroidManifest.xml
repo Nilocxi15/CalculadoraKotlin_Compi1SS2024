@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CalculadoraKotlin"
         tools:targetApi="31">
         <activity
+            android:name=".gui.resultActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

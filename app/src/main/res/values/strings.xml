@@ -3,4 +3,6 @@
     <string name="button_name">Calcular</string>
     <string name="app_tittle">Calculadora</string>
     <string name="instructions">Por favor ingrese una operación aritmética</string>
+    <string name="result_tittle">Resultado</string>
+    <string name="resultStandBy">- - - - -</string>
 </resources>
